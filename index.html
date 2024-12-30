@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Arconnect Animation</title>
+<style>
+body {
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #f0f0f0;
+}
+
+.container {
+  margin-top: 100px;
+}
+
+.letter {
+  display: inline-block;
+  margin: 0 5px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.animated {
+  opacity: 1;
+  transform: translateY(0);
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <span class="letter">A</span>
+  <span class="letter">r</span>
+  <span class="letter">c</span>
+  <span class="letter">o</span>
+  <span class="letter">n</span>
+  <span class="letter">n</span>
+  <span class="letter">e</span>
+  <span class="letter">c</span>
+  <span class="letter">t</span>
+</div>
+
+<script>
+window.onload = function() {
+  var letters = document.querySelectorAll('.letter');
+
+  letters.forEach(function(letter, index) {
+    setTimeout(function() {
+      letter.classList.add('animated');
+    }, index * 100); // Stagger animation with 100ms delay
+  });
+};
+</script>
+
+</body>
+</html>
